@@ -126,12 +126,13 @@ Iteration runs at two cadences:
 - **In-task** — Reflect mid-decision: swap operations, retune resolution, patch a local heuristic, register a new blind spot. Lightweight, no ledger.
 - **Cross-task** — amendment process below: ledger-tracked, calibration-tested, slower. In-task patches that recur are promoted to cross-task amendments.
 
-To stay stable under self-modification:
+Nothing is strictly invariant. Every part can change. Layers differ in change-cost, gating, and required scrutiny:
 
-- **Constitution** — invariant core. What cannot change without the framework ceasing to be itself. Includes user-as-principal, provenance preservation, append-only ledger, human-in-loop at decision-collapse.
-- **Amendments** — mutable layer. Primitives, heuristics, schemas, prompts. Edited via explicit amendment process: proposed change → tested on historical decisions → calibration delta measured → accept or reject.
-- **Triggers** — amendments fire only on calibration drift, repeated scope misses, new domain, taste shift, or external regime change. No churn without trigger.
-- **Shadow registry** — known blind spots, probed regularly. Without an adversarial probe, the framework drifts into ego-confirmation.
+- **Constitution** — highest-gated layer. User-as-principal, provenance preservation, append-only ledger, human-in-loop at Collapse. Changes here require explicit user input, impact analysis, and propagation across the workspace.
+- **Amendments** — lighter gate. Primitives, heuristics, schemas, prompts. Proposed change → tested on historical decisions → calibration delta measured → accept or reject.
+- **Propagation** — every accepted change scans the workspace for dependents (system prompt, README, schemas, ledger conventions, related amendments) and either updates them or surfaces them for the user to update. No silent drift between core and dependents.
+- **Triggers** — changes fire only on calibration drift, repeated scope misses, new domain, taste shift, or external regime change. No churn without trigger.
+- **Shadow registry** — known blind spots, probed regularly. Without adversarial probe, the framework drifts into ego-confirmation.
 
 ---
 
@@ -187,7 +188,7 @@ If primitives leak in case one, they are wrong. Iterate them. Framework iteratin
 
 Use this README as reference. Each project builds its own setup — file layout, tool surface, and amendment cadence are tuned to the project. Concrete examples will follow.
 
-Guiding split, mirroring §6: bake the invariant core (constitution, poles, operations, stop rule, feasibility gate, cadence) into the system prompt as the reflex layer; keep the mutable rest (amendments, ledger, registries, taste, domain notes) as files the agent reads on demand. Agent writes to files, never to its own prompt. Amendments override the README on conflict.
+Guiding split, mirroring §6: bake the highest-gated layer (constitution, poles, operations, stop rule, feasibility gate, cadence) into the system prompt as the reflex layer; keep the lighter-gated rest (amendments, ledger, registries, taste, domain notes) as files the agent reads on demand. Agent writes to files, never to its own prompt. Constitution edits require explicit user input plus a propagation pass across all dependent files. Amendments override the README on conflict.
 
 ---
 
