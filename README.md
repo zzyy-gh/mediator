@@ -12,9 +12,7 @@ Help a user move from unclear intent and incomplete world-knowledge to a warrant
 
 The framework does not decide. It scaffolds. The user (and their taste) remains the principal.
 
-It is general-purpose. The same engine applies to investing, research, medicine, career, design. Domain knowledge lives in the user's graph, not in the framework.
-
-The framework itself is co-built with the user. Seed primitives, ontology choices, and operation set are not handed down — they emerge and iterate from contact with the user's real decisions.
+General-purpose: the same engine applies to investing, research, medicine, career, design — domain knowledge lives in the user's graph, not in the framework. The framework itself is co-built with the user: seed primitives, ontology, and operation set emerge from contact with real decisions, not handed down. Load-bearing parts are §1–3; §4 onward illustrate one workable shape, not prescription.
 
 ---
 
@@ -75,15 +73,9 @@ Many decisions stall not because intent or world is unclear, but because the sel
 
 ---
 
----
-
-*Sections from here propose one workable shape — operations, heuristics, layout, anti-patterns, build steps. Treat them as examples, not exhaustive or prescriptive. The load-bearing parts are §1–3 (purpose, ontology, three poles); the rest is illustration.*
-
----
-
 ## 4. The operation set
 
-The framework's pure self is a small set of domain-free operations. It knows nothing about any subject matter. It knows only these:
+At its purest, the framework is a small set of domain-free operations on structure. Example seed set:
 
 1. **Bound** — define an S-node.
 2. **Connect** — relate two S-nodes.
@@ -108,9 +100,7 @@ At every step, the framework selects the next operation by trading off two thing
 - **Epistemic value** — expected reduction in fuzziness.
 - **Pragmatic value** — expected progress toward intent.
 
-Probes are cheap, high-yield, low-reversibility. They tend to dominate early. Execution moves dominate once fuzz is low enough that further probing yields less than committing. The framework surfaces the trade-off; the user chooses.
-
-Stop rule: when expected information gain falls below cost-of-asking, commit and act.
+Probes dominate while fuzz is high; execution dominates once expected information gain falls below cost-of-asking. That crossover is the stop rule — commit and act.
 
 **Feasibility gate** — before Collapse, check path-existence: capability (Self) × constraints (World) × budget (Intent). If any fail, route to Reframe or Probe instead of forcing commit. Possible is not assumed; it is verified.
 
@@ -128,10 +118,10 @@ Iteration runs at two cadences:
 - **In-task** — Reflect mid-decision: swap operations, retune resolution, patch a local heuristic, register a new blind spot. Lightweight, no ledger.
 - **Cross-task** — amendment process below: ledger-tracked, calibration-tested, slower. In-task patches that recur are promoted to cross-task amendments.
 
-Nothing is strictly invariant. Every part can change. Layers differ in change-cost, gating, and required scrutiny:
+Nothing is strictly invariant. Every part can change. Tiers, processes, and practices that keep iteration disciplined:
 
-- **Constitution** — highest-gated layer. User-as-principal, provenance preservation, append-only ledger, human-in-loop at Collapse. Changes here require explicit user input, impact analysis, and propagation across the workspace.
-- **Amendments** — lighter gate. Primitives, heuristics, schemas, prompts. Proposed change → tested on historical decisions → calibration delta measured → accept or reject.
+- **Constitution** — highest-gated tier. User-as-principal, provenance preservation, append-only ledger, human-in-loop at Collapse. Changes here require explicit user input, impact analysis, and propagation across the workspace.
+- **Amendments** — lighter-gated tier. Primitives, heuristics, schemas, prompts. Proposed change → tested on historical decisions → calibration delta measured → accept or reject.
 - **Propagation** — every accepted change scans the workspace for dependents (system prompt, README, schemas, ledger conventions, related amendments) and either updates them or surfaces them for the user to update. No silent drift between core and dependents.
 - **Triggers** — changes fire only on calibration drift, repeated scope misses, new domain, taste shift, or external regime change. No churn without trigger.
 - **Shadow registry** — known blind spots, probed regularly. Without adversarial probe, the framework drifts into ego-confirmation.
@@ -182,7 +172,7 @@ Tension between the two is productive. Neither alone suffices.
 6. **Month 6+** — taste model. Fine-tune small model on the decision log, or RAG over it.
 7. **Year 2+** — share framework, keep taste private.
 
-If primitives leak in case one, they are wrong. Iterate them. Framework iterating itself is the point.
+If primitives leak in case one, iterate them.
 
 ---
 
@@ -190,7 +180,7 @@ If primitives leak in case one, they are wrong. Iterate them. Framework iteratin
 
 Use this README as reference. Each project builds its own setup — file layout, tool surface, and amendment cadence are tuned to the project. Concrete examples will follow.
 
-Guiding split, mirroring §6: bake the highest-gated layer (constitution, poles, operations, stop rule, feasibility gate, cadence) into the system prompt as the reflex layer; keep the lighter-gated rest (amendments, ledger, registries, taste, domain notes) as files the agent reads on demand. Agent writes to files, never to its own prompt. Constitution edits require explicit user input plus a propagation pass across all dependent files. Amendments override the README on conflict.
+Guiding split, mirroring §6: bake the highest-gated tier (constitution, poles, operations, stop rule, feasibility gate, cadence) into the system prompt as the reflex layer; keep the lighter-gated rest (amendments, ledger, registries, taste, domain notes) as files the agent reads on demand. Agent writes to files, never to its own prompt. Constitution edits require explicit user input plus a propagation pass across all dependent files. Amendments override the README on conflict.
 
 ---
 
@@ -230,4 +220,4 @@ White space, not yet integrated by any of the above:
 
 ## 13. One-line summary
 
-The framework is **epistemic mediation, made operational** — eleven domain-free operations on structure, executed under preserved fuzziness, scoped by the user's taste, grounded by outcome, and capable of reshaping itself.
+The framework is **epistemic mediation, made operational** — a small set of domain-free operations on structure, executed under preserved fuzziness, scoped by the user's taste, grounded by outcome, and capable of reshaping itself.
