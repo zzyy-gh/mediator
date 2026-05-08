@@ -24,9 +24,18 @@ The sole objective of this instance is **favourable expected return relative to 
 
 ## What this instance does NOT prescribe
 
-Sizing, risk measure, style, horizon, data sources — all chosen per inquiry. Surfaced in `methods.md` as available, not required.
+Sizing, risk measure, style, horizon, data sources, vehicles — all chosen per inquiry. Surfaced in `methods.md` as available, not required.
+
+## Strategies
+
+Two committed archetypes, declared in `strategies.md`:
+
+- **Type A — Resilient Compounder** — durable across most futures, under or fairly valued now.
+- **Type B — Asymmetric Speculative** — deductively-likely large future demand, undervalued pre-recognition.
+
+Portfolio architecture, macro overlays, scenario balancing, money-flow logic, cross-asset structure are **open considerations** — pulled situationally, never prescribed.
 
 ## Change process
 
 Changes here require explicit user input plus a propagation pass across:
-`architecture.md`, `primitives.md`, `methods.md`, `template-inquiry.md`, `blind-spots.md`, `graph/*`, `feeds/*`, and active entries in `inquiries/`.
+`architecture.md`, `strategies.md`, `primitives.md`, `methods.md`, `template-inquiry.md`, `blind-spots.md`, `graph/*`, `feeds/*`, `agents/*`, and active entries in `inquiries/`.

@@ -22,3 +22,10 @@ Earnings, margins, capex, balance-sheet health, sector aggregates, single-name f
 ```
 
 _(Hydrate as feeds come online.)_
+
+## Auto: feed.edgar
+
+<!-- BEGIN feed.edgar -->
+# Stub feed — wire up edgar pulls per inquiry.
+# last_attempt: 2026-05-08T05:15:27+00:00
+<!-- END feed.edgar -->

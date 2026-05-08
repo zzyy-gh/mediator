@@ -112,12 +112,17 @@ Every closed inquiry leaves the graph slightly smarter. The next inquiry starts 
 
 ## What the framework is opinionated about
 
-Only two things:
+Only three things:
 
 - **The objective** — favourable E[R] / E[risk].
 - **The shape** — graph + inquiry + Collapse + outcome loop.
+- **The two strategy archetypes** — Type A (resilient compounder) and Type B (asymmetric speculative). See `strategies.md`.
 
-Everything else (methods, sizing, risk measures, data sources, agent implementations) is up for grabs by the user and agents, chosen per inquiry, and evolved by amendments.
+Everything else (methods, sizing, risk measures, data sources, vehicles, agent implementations, portfolio architecture) is up for grabs by the user and agents, chosen per inquiry, and evolved by amendments.
+
+## Agents and orchestrator
+
+Agent specs live in `agents/<name>.md` — single-purpose, stateless functions over graph + inquiries. The orchestrator (`orchestrator/`) is a small Python runner using the Claude Agent SDK. It watches `inquiries/` for section-status changes and dispatches the matching agent (or notifies a human if the section's owner is `human`). Sections write only to themselves; cross-inquiry work runs in parallel.
 
 ## Why flat and abstract
 

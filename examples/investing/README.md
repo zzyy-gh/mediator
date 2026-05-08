@@ -8,14 +8,17 @@ Concrete instance of the [mediator framework](../../README.md), tuned for one ob
 |------------|------|
 | `objective.md` | Sole goal, operating principles, invariants. |
 | `architecture.md` | Graph + inquiry + Collapse + outcome loop. **Read this first.** |
+| `strategies.md` | Two committed archetypes (Type A, Type B) and the menu of open considerations. |
 | `primitives.md` | Schemas: node, edge, inquiry, operation. |
 | `methods.md` | Toolbox: sizing, risk, return-modelling, behavioural. Available, not required. |
 | `blind-spots.md` | Known biases and failure modes; adversarial probes pre-Collapse. |
 | `template-inquiry.md` | Inquiry shape: scope, assumptions, graph refs, distributions, sensitivity. |
 | `amendments.md` | Append-only log of proposed and accepted changes. |
-| `graph/` | Persistent connected world: macro, flows, sentiment, technicals, fundamentals, themes, politics, portfolio, edges. |
+| `graph/` | Persistent connected world: macro, flows, sentiment, technicals, fundamentals, themes, politics, portfolio, strategies, edges. |
 | `inquiries/` | Open-ended, ranked, or actionable inquiries. |
+| `agents/` | Agent specs (markdown). One file per agent. Owner field on any section can swap in a human. |
 | `feeds/` | Data-source specs; each feed registered via a feed-flavour inquiry. |
+| `orchestrator/` | Python runner using the Claude Agent SDK. Watches inquiries, dispatches agents, runs feeds. |
 | `taste/` | Private, gitignored. Revealed-preference log. |
 
 ## How to run
