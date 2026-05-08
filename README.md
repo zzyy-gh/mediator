@@ -14,6 +14,8 @@ The framework does not decide. It scaffolds. The user (and their taste) remains 
 
 It is general-purpose. The same engine applies to investing, research, medicine, career, design. Domain knowledge lives in the user's graph, not in the framework.
 
+The framework itself is co-built with the user. Seed primitives, ontology choices, and operation set are not handed down — they emerge and iterate from contact with the user's real decisions.
+
 ---
 
 ## 2. Core ontology
