@@ -1,6 +1,6 @@
-# Shadow Registry — Investing
+# Blind Spots
 
-Known blind spots, probed adversarially before Collapse. Append on discovery; never delete.
+Known biases and failure modes, probed adversarially before Collapse. Append on discovery; never delete.
 
 - **Survivorship bias** — backtests on the current index miss delisted names.
 - **Look-ahead bias** — using info not available at decision time.

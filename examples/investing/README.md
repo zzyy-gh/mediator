@@ -1,21 +1,36 @@
 # Investing Instance
 
-Concrete instance of the [mediator framework](../../README.md) applied to investing decisions. Treat as a worked example of the §11 layout, not a prescription.
+Concrete instance of the [mediator framework](../../README.md), tuned for one objective: **favourable expected return relative to expected risk**. The world is treated as a connected graph; everything (price, macro, flows, sentiment, fundamentals, themes, politics, portfolio) is an equal-weight node. See `architecture.md` for the shape and flow.
 
 ## Layout
 
-- `constitution.md` — instance-level invariants (inherits root constitution; adds investing-specific limits).
-- `schemas/` — S-node and M-node shapes for this instance.
-- `registry/` — tools, prior art, and known blind spots in the investing domain.
-- `ledger/` — append-only record of decisions: framing, S-nodes, M-nodes, predictions, outcomes.
-- `amendments/` — proposed and accepted changes to primitives, heuristics, schemas.
-- `taste/` — private (gitignored). Revealed-preference log: what was considered, dismissed, chosen, and why.
+| File / dir | Role |
+|------------|------|
+| `objective.md` | Sole goal, operating principles, invariants. |
+| `architecture.md` | Graph + inquiry + Collapse + outcome loop. **Read this first.** |
+| `primitives.md` | Schemas: node, edge, inquiry, operation. |
+| `methods.md` | Toolbox: sizing, risk, return-modelling, behavioural. Available, not required. |
+| `blind-spots.md` | Known biases and failure modes; adversarial probes pre-Collapse. |
+| `template-inquiry.md` | Inquiry shape: scope, assumptions, graph refs, distributions, sensitivity. |
+| `amendments.md` | Append-only log of proposed and accepted changes. |
+| `graph/` | Persistent connected world: macro, flows, sentiment, technicals, fundamentals, themes, politics, portfolio, edges. |
+| `inquiries/` | Open-ended, ranked, or actionable inquiries. |
+| `feeds/` | Data-source specs; each feed registered via a feed-flavour inquiry. |
+| `taste/` | Private, gitignored. Revealed-preference log. |
 
-## How to use
+## How to run
 
-1. Open a live decision in `ledger/YYYY-MM-DD-name.md`.
-2. Frame in S-nodes (Intent / World / Self) and M-nodes (Probe, Reframe, Test, Collapse, ...).
-3. Probe gaps; consult `registry/tools.md` before reinventing.
-4. Run the feasibility gate before Collapse.
-5. Log a prediction with an explicit outcome window. On outcome, append calibration delta.
-6. If a reflection recurs across ledger entries, promote it to `amendments/`.
+1. Open an inquiry: copy `template-inquiry.md` to `inquiries/YYYY-MM-DD-name.md`. Choose `shape` (convergent | divergent) and `collapse_flavour` (capital | belief | feed).
+2. Sharpen scope. List load-bearing assumptions.
+3. Snapshot graph state. Reference relevant nodes by id.
+4. Run M-nodes: probe scope, prior art, world, edges; reframe if needed; feasibility-gate.
+5. Collapse (human gate). Output:
+   - **capital** — position change.
+   - **belief** — graph node or edge added / strengthened / refuted.
+   - **feed** — new data source registered in `feeds/`.
+6. On outcome window, fill realized values, calibration delta, edges affected.
+7. Reflect. If a pattern recurs across ≥3 inquiries, promote to `amendments.md`.
+
+## Plug-in rule
+
+Every section / file declares an owner: `human | agent | either`. Orchestrator dispatches by status. Sections write only to themselves. Swap actors via the owner field; no code change.
