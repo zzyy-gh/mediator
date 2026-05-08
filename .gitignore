@@ -1,3 +1,6 @@
 # Taste is private. Keep README placeholder; ignore everything else.
 examples/*/taste/*
 !examples/*/taste/README.md
+
+# Crash artifacts
+*.stackdump
